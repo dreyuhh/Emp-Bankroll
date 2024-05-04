@@ -19,27 +19,30 @@ const collectEmployees = function() {
     // TODO: Get user input to create and return an array of employee objects
 
     employeesArray.push(employeeInfo)
-   let confirmAddEmployee = confirm('Would you like to add another employee?');
-   if(! confirmAddEmployee){
-    addEmployee = false
+    let confirmAddEmployee = confirm('Would you like to add another employee?');
+    if (! confirmAddEmployee){
+      addEmployee = false
+    }
    }
-  }
 
   return employeesArray;
+
 }
   
 
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
   let sum = 0;
+  
   employeesArray.forEach(employeeInfo => {
     sum += employeeInfo.salary;
   });
-// TODO: Calculate and display the average salary
+
+  // TODO: Calculate and display the average salary
   const average = sum / employeesArray.length
   console.log(`average: $${average.toFixed(2)} for ${employeesArray.length} employees`)
  
-}
+};
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
   const random = Math.floor(Math.random() * employeesArray.length);
